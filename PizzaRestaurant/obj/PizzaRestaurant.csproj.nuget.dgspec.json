@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Github\\PizzaRestaurant\\PizzaRestaurant\\PizzaRestaurant.csproj": {}
+    "D:\\Git-deptadominik\\PizzaRestaurantRepo\\PizzaRestaurant\\PizzaRestaurant.csproj": {}
   },
   "projects": {
-    "D:\\Github\\PizzaRestaurant\\PizzaRestaurant\\PizzaRestaurant.csproj": {
+    "D:\\Git-deptadominik\\PizzaRestaurantRepo\\PizzaRestaurant\\PizzaRestaurant.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Github\\PizzaRestaurant\\PizzaRestaurant\\PizzaRestaurant.csproj",
+        "projectUniqueName": "D:\\Git-deptadominik\\PizzaRestaurantRepo\\PizzaRestaurant\\PizzaRestaurant.csproj",
         "projectName": "PizzaRestaurant",
-        "projectPath": "D:\\Github\\PizzaRestaurant\\PizzaRestaurant\\PizzaRestaurant.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "D:\\Github\\PizzaRestaurant\\PizzaRestaurant\\obj\\",
+        "projectPath": "D:\\Git-deptadominik\\PizzaRestaurantRepo\\PizzaRestaurant\\PizzaRestaurant.csproj",
+        "packagesPath": "C:\\Users\\Dominik\\.nuget\\packages\\",
+        "outputPath": "D:\\Git-deptadominik\\PizzaRestaurantRepo\\PizzaRestaurant\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dominik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -43,6 +43,32 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.11.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
