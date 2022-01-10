@@ -452,5 +452,11 @@ $RECYCLE.BIN/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-
 .vscode/**
+
+##
+## Postgresql docker image persistent storage
+##
+tmp/**
+tmp/*
+tmp
