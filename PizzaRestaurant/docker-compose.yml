@@ -4,6 +4,8 @@ services:
     image: postgres
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_PASSWORD: pizza
       POSTGRES_USER: pizza-admin
@@ -12,5 +14,6 @@ services:
     build: .
     ports:
       - "8080:80"
+      - "4433:443"
     depends_on:
       - db
