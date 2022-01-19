@@ -29,7 +29,7 @@
     {
         document.writeln("<div class=" + c + "row mb-3" + c + ">");
         document.writeln("<div class=" + c + "col-md-8 themed-grid-col" + c + ">Nazwa</div>");
-        document.writeln("<div class=" + c + "col-6 col-md-4 themed-grid-col" + c + ">Cena za pizze [PLN]</div>");
+        document.writeln("<div class=" + c + "col-6 col-md-4 themed-grid-col" + c + ">Cena za pizzę [PLN]</div>");
         document.writeln("</div>");
 
         for (var i = 0; i < Menu['pizza'].length; i++)
@@ -53,6 +53,6 @@
     </div>
     <hr class="my-4">
     <div class="text-center">
-        <button class="w-100 btn btn-primary btn-lg">Złóż zamówienie telefonicznie</button>
+        <a class="w-100 btn btn-primary btn-lg" asp-area="" asp-controller="Home" asp-action="Privacy">Złóż zamówienie telefonicznie</a>
     </div>
 </main>
