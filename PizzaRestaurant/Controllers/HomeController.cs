@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using PizzaRestaurant.Data;
 using PizzaRestaurant.Models;
+using PizzaRestaurant.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,15 +15,22 @@ namespace PizzaRestaurant.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var pizzas = _context
+                .Pizza
+                .Where(c => c.Availiability == true)
+                .ToList();
+
+            return View(new IndexModel("Test", pizzas));
         }
 
         public IActionResult Privacy()
