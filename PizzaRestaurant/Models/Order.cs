@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,6 +10,7 @@ namespace PizzaRestaurant.Models
     {
         public int OrderID  { get; set; }
         public int ClientID  { get; set; }
+        [NotMapped]
         public List<int>PizzaIDS   { get; set; }
         public int RestaurantID   { get; set; }
         public bool Confirmation   { get; set; }
