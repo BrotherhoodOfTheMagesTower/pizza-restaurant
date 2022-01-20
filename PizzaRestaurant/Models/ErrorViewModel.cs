@@ -1,5 +1,3 @@
-using System;
-
 namespace PizzaRestaurant.Models
 {
     public class ErrorViewModel
