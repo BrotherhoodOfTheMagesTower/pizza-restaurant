@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace PizzaRestaurant.Models
+﻿namespace PizzaRestaurant.Models
 {
-    public class Worker:Account
+    public class Worker : Account
     {
         public int WorkerID { get; set; }
         public int Salary { get; set; }

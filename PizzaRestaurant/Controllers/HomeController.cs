@@ -3,12 +3,8 @@ using Microsoft.Extensions.Logging;
 using PizzaRestaurant.Data;
 using PizzaRestaurant.Models;
 using PizzaRestaurant.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace PizzaRestaurant.Controllers
 {
@@ -30,7 +26,7 @@ namespace PizzaRestaurant.Controllers
                 .Where(c => c.Availiability == true)
                 .ToList();
 
-            if(pizzas.Count == 0)
+            if (pizzas.Count == 0)
             {
                 _context.Pizza.Add(new Pizza(1, "Margherita", 23, 5, 32, true));
                 _context.Pizza.Add(new Pizza(1, "Funghi", 15, 2, 32, true));
