@@ -1,15 +1,15 @@
 version: "3.9"
 services:
   db:
-    image: postgres
-    volumes:
-      - ./tmp/db:/var/lib/postgresql/data
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    #volumes:
+    #  - ./tmp/db:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - "1433:1433"
     environment:
-      POSTGRES_PASSWORD: pizza
-      POSTGRES_USER: pizza-admin
-      POSTGRES_DB: pizza-db
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "MyPassword1234"
+    network_mode: host
   dotnet:
     build: .
     ports:
@@ -17,3 +17,4 @@ services:
       - "4433:443"
     depends_on:
       - db
+    network_mode: host
