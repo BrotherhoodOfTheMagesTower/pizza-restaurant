@@ -5,12 +5,10 @@ namespace PizzaRestaurant.ViewModels
 {
     public class IndexModel
     {
-        public string Name { get; private set; }
         public List<Models.Pizza> Pizzas { get; private set; }
 
-        public IndexModel(string name, List<Pizza> pizzas)
+        public IndexModel(List<Pizza> pizzas)
         {
-            Name = name;
             Pizzas = pizzas;
         }
     }

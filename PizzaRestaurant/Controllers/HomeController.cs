@@ -30,7 +30,27 @@ namespace PizzaRestaurant.Controllers
                 .Where(c => c.Availiability == true)
                 .ToList();
 
-            return View(new IndexModel("Test", pizzas));
+            if(pizzas.Count == 0)
+            {
+                _context.Pizza.Add(new Pizza(1, "Margherita", 23, 5, 32, true));
+                _context.Pizza.Add(new Pizza(1, "Funghi", 15, 2, 32, true));
+                _context.Pizza.Add(new Pizza(1, "Capriciosa", 25, 6, 32, true));
+                _context.Pizza.Add(new Pizza(1, "Parma", 22, 4, 32, true));
+                _context.Pizza.Add(new Pizza(1, "Campione", 24, 5, 32, true));
+                _context.Pizza.Add(new Pizza(1, "Napoletana", 23, 5, 32, true));
+                _context.Pizza.Add(new Pizza(1, "Roma", 26, 6, 32, true));
+                _context.Pizza.Add(new Pizza(1, "Pepperoni", 25, 5, 32, true));
+                _context.Pizza.Add(new Pizza(1, "Havai", 23, 4, 32, true));
+                _context.Pizza.Add(new Pizza(1, "Bianco", 26, 6, 32, true));
+                _context.Pizza.Add(new Pizza(1, "Prosciutto", 23, 4, 32, true));
+                _context.Pizza.Add(new Pizza(1, "Quattro formaggi", 25, 5, 32, true));
+                _context.Pizza.Add(new Pizza(1, "Vegano", 26, 6, 32, true));
+                _context.Pizza.Add(new Pizza(1, "Gangsterska", 28, 7, 32, true));
+                _context.Pizza.Add(new Pizza(1, "Pokerowa", 25, 6, 32, true));
+                _context.SaveChanges();
+            }
+
+            return View(new IndexModel(pizzas));
         }
 
         public IActionResult Privacy()

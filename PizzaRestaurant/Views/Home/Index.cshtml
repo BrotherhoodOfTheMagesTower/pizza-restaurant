@@ -6,7 +6,14 @@
     .themed-grid-col {
         padding-top: .75rem;
         padding-bottom: .75rem;
-        background-color: rgba(86, 61, 124, .15);
+        background-color: rgb(86, 61, 124, .2);
+        border: 1px solid rgba(86, 61, 124, .2);
+    }
+
+    .themed-grid-col-naglowek {
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+        background-color: rgb(0, 123, 255);
         border: 1px solid rgba(86, 61, 124, .2);
     }
 
@@ -15,6 +22,10 @@
         margin-bottom: 1.5rem;
         background-color: rgba(0, 123, 255, .15);
         border: 1px solid rgba(0, 123, 255, .2);
+    }
+
+    .custom-class {
+        border-radius: 10px;
     }
 </style>
 
@@ -42,22 +53,36 @@
             document.writeln("<div class=" + c + "col-6 col-md-4 themed-grid-col" + c + ">" + Menu['price'][i] + "</div>");
             document.writeln("</div>");
         }
+        
     }
 </script>
 
 <main>
     <div class="text-center">
         <h1 class="display-4">Witamy w naszej pizzerii!</h1>
-        <p>@Model.Name</p>
         <p>Poniżej znajdą państwo menu naszych lokali</p>
     </div>
 
     <div class="container">
-        <script>printMenu();</script>
-        
+        <div class="row mb-3">
+            <div class="custom-class text-white col-md-8 themed-grid-col-naglowek">Nazwa</div>
+            <div class="col-10"></div>
+            <div class="custom-class text-white col-6 col-md-4 themed-grid-col-naglowek">Cena za pizzę [PLN]</div>
+        </div>
+
+
+        @foreach (var pizza in @Model.Pizzas)
+        {
+            <div class="row mb-3">
+                 <div class="col-md-8 themed-grid-col">@pizza.Name</div>
+                 <div class="col-6 col-md-4 themed-grid-col">@pizza.Price</div>
+            </div>
+        }
+        @* <script>printMenu();</script>*@
+
     </div>
-    <hr class="my-4">
-    <div class="text-center">
-        <a class="w-100 btn btn-primary btn-lg" asp-area="" asp-controller="Home" asp-action="Privacy">Złóż zamówienie telefonicznie</a>
-    </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <a class="w-100 btn btn-primary btn-lg" asp-area="" asp-controller="Home" asp-action="Privacy">Złóż zamówienie telefonicznie</a>
+            </div>
 </main>
