@@ -2,19 +2,12 @@ version: "3.9"
 services:
   db:
     image: mcr.microsoft.com/mssql/server:2019-latest
-    #volumes:
-    #  - ./tmp/db:/var/lib/postgresql/data
-    ports:
-      - "1433:1433"
     environment:
       ACCEPT_EULA: "Y"
       SA_PASSWORD: "MyPassword1234"
     network_mode: host
   dotnet:
     build: .
-    ports:
-      - "8080:80"
-      - "4433:443"
     depends_on:
       - db
     network_mode: host

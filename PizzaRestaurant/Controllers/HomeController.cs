@@ -56,6 +56,15 @@ namespace PizzaRestaurant.Controllers
 
         public IActionResult Order()
         {
+            var pizzas = _context
+                .Pizza
+                .Where(c => c.Availiability == true)
+                .ToList();
+            return View(new IndexModel(pizzas));
+        }
+
+        public IActionResult OrderComplete()
+        {
             return View();
         }
 
