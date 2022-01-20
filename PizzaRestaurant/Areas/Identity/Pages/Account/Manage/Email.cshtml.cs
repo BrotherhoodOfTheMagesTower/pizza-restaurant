@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-using System.Text.Encodings.Web;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
+using System.Text.Encodings.Web;
+using System.Threading.Tasks;
 
 namespace PizzaRestaurant.Areas.Identity.Pages.Account.Manage
 {
@@ -44,7 +41,7 @@ namespace PizzaRestaurant.Areas.Identity.Pages.Account.Manage
         public class InputModel
         {
             [Required]
-            [EmailAddress(ErrorMessage ="Wprowadzony adres e-mail nie jest poprawny.")]
+            [EmailAddress(ErrorMessage = "Wprowadzony adres e-mail nie jest poprawny.")]
             [Display(Name = "Nowy e-mail")]
             public string NewEmail { get; set; }
         }
