@@ -57,7 +57,7 @@ foreach (var pizza in @Model.Pizzas)
       </div>
       <div class="col-md-7 col-lg-8">
         <h4 class="mb-3">Adres dostawy</h4>
-        <form class="needs-validation" novalidate="" asp-action="OrderComplete">
+        <div class="needs-validation" novalidate="">
           <div class="row g-3">
 
             <div class="col-12">
@@ -79,9 +79,10 @@ foreach (var pizza in @Model.Pizzas)
                <hr class="my-4">
             </div>
 
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Złóż zamówienie</button>
-        </form>
+          <button class="w-100 btn btn-primary btn-lg" onclick="send()">Złóż zamówienie</button>
+        </div>
       </div>
+    </div>
     </div>
 }
 else 
@@ -132,5 +133,17 @@ else
 
   function useCode() {
     console.log("CODE");
+
+  }
+
+  function send() {
+    if (itemIdsList.length > 0) {
+      if (document.getElementById("address").value == '' ||  document.getElementById("address").value == document.getElementById("address").defaultValue) {
+        
+      }
+      else {
+        window.location.href="../Home/OrderComplete";
+      }
+    }
   }
 </script>
