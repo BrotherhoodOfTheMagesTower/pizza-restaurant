@@ -30,6 +30,7 @@ namespace PizzaRestaurant.Areas.Identity.Pages.Account.Manage
         public class InputModel
         {
             [Required(ErrorMessage = "W celu usunięcia konta, prosimy podać swoje hasło.")]
+            [Display(Name = "Aktualne hasło")]
             [DataType(DataType.Password)]
             public string Password { get; set; }
         }
