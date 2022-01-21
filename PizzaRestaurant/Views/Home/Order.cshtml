@@ -139,7 +139,7 @@ else
   function send() {
     if (itemIdsList.length > 0) {
       if (document.getElementById("address").value == '' ||  document.getElementById("address").value == document.getElementById("address").defaultValue) {
-        
+        alert("Prosze podać adres i wybrać pizze do zamówienia!")
       }
       else {
         window.location.href="../Home/OrderComplete";
